@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright Yahoo. Licensed under the terms of the Apache 2.0 license. See LICENSE in the project root. -->
+<hosts>
+  <host name="vespa-config-0.vespa-internal.testvespa.svc.cluster.local">
+    <alias>vespa-config-0</alias>
+  </host>
+
+
+  <host name="vespa-admin-0.vespa-internal.testvespa.svc.cluster.local">
+    <alias>vespa-admin-0</alias>
+  </host>
+
+  <!-- stateless containers(feed & query), so we can add/remove -->
+  __CONTAINER_HOSTS__
+
+
+  <!-- stateful containers -->
+  <host name="vespa-content-0.vespa-internal.testvespa.svc.cluster.local">
+    <alias>vespa-content-0</alias>
+  </host>
+
+</hosts>

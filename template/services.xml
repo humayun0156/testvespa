@@ -5,18 +5,12 @@
     <admin version="2.0">
         <configservers>
             <configserver hostalias="vespa-config-0" />
-            <configserver hostalias="vespa-config-1" />
-            <configserver hostalias="vespa-config-2" />
         </configservers>
         <cluster-controllers>
             <cluster-controller hostalias="vespa-config-0" />
-            <cluster-controller hostalias="vespa-config-1" />
-            <cluster-controller hostalias="vespa-config-2" />
         </cluster-controllers>
         <slobroks>
             <slobrok hostalias="vespa-config-0" />
-            <slobrok hostalias="vespa-config-1" />
-            <slobrok hostalias="vespa-config-2" />
         </slobroks>
 
         <adminserver hostalias="vespa-admin-0" />
@@ -27,34 +21,19 @@
         <document-processing/>
         <search/>
         <nodes>
-            <node hostalias="vespa-container-0" />
-            <node hostalias="vespa-container-1" />
-            <node hostalias="vespa-container-2" />
+            __CONTAINER_NODES__
         </nodes>
     </container>
 
-    <content id="base_idx_0_0_0" version="1.0">
-        <redundancy>2</redundancy>
-        <documents>
-            <document type="vector" mode="index" />
-            <document-processing cluster="container" />
-        </documents>
-        <nodes>
-            <node hostalias="vespa-content-0" distribution-key="0" />
-            <node hostalias="vespa-content-1" distribution-key="1" />
-        </nodes>
-    </content>
-
     <!-- demo index -->
     <content id="music" version="1.0">
-        <redundancy>2</redundancy>
+        <redundancy>1</redundancy>
         <documents>
             <document type="music" mode="index" />
             <document-processing cluster="container" />
         </documents>
         <nodes>
             <node hostalias="vespa-content-0" distribution-key="0" />
-            <node hostalias="vespa-content-1" distribution-key="1" />
         </nodes>
     </content>
 
